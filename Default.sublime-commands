@@ -1,0 +1,10 @@
+[
+  { "caption": "ft1 Focus Tab 1", "command": "focus_group", "args": { "group": 0 } },
+  { "caption": "ft2 Focus Tab 2", "command": "focus_group", "args": { "group": 1 } },
+  { "caption": "ft3 Focus Tab 3", "command": "focus_group", "args": { "group": 2 } },
+  { "caption": "ft4 Focus Tab 4", "command": "focus_group", "args": { "group": 3 } },
+  { "caption": "ft5 Focus Tab 5", "command": "focus_group", "args": { "group": 3 } },
+  { "id": "set_file_macro", "caption": "sf4 - set file macro 4", "command": "set_file_macro" },
+  { "id": "set_file_macro_hist", "caption": "sfh4 - Set File macro 4 history", "command": "set_file_macro_hist" },
+  { "id": "set_project_folder", "caption": "set_project_folder", "command": "set_project_folder" }
+]
