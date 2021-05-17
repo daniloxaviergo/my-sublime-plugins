@@ -7,5 +7,9 @@
   { "id": "set_file_macro", "caption": "sf4 - set file macro 4", "command": "set_file_macro" },
   { "id": "set_file_macro_hist", "caption": "sfh4 - Set File macro 4 history", "command": "set_file_macro_hist" },
   { "id": "save_tabs_file", "caption": "save_tabs_file", "command": "save_tabs_file" },
-  { "id": "set_project_folder", "caption": "set_project_folder", "command": "set_project_folder" }
+  { "id": "set_project_folder", "caption": "set_project_folder", "command": "set_project_folder" },
+  { "id": "set_project_folder", "caption": "grid_navigation_up", "command": "grid_navigation", "args": {"direction": "up"} },
+  { "id": "set_project_folder", "caption": "grid_navigation_down", "command": "grid_navigation", "args": {"direction": "down"} },
+  { "id": "set_project_folder", "caption": "grid_navigation_left", "command": "grid_navigation", "args": {"direction": "left"} },
+  { "id": "set_project_folder", "caption": "grid_navigation_rigth", "command": "grid_navigation", "args": {"direction": "rigth"} }
 ]
