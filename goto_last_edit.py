@@ -24,7 +24,7 @@ class GotoLastEditCommand(sublime_plugin.TextCommand):
     self.show_quick_panel(self.files, self.view.window())
 
   def show_quick_panel(self, files, window):
-    window.show_quick_panel(files, self.on_done, sublime.MONOSPACE_FONT)
+    window.show_quick_panel(files, self.on_done)
 
   def on_done(self, index):
     if index == -1:
