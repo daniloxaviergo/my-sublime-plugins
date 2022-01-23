@@ -17,8 +17,8 @@ class GotoLastEditCommand(sublime_plugin.TextCommand):
     self.files = []
     for last_edit in self.goto_last_edit:
       parts_file_name = last_edit["file_name"].split("/")
-      file_name = "/".join(parts_file_name[4:]) + ":" + str(last_edit["column"]) + ":" + str(last_edit["view_id"])
-      file = [file_name, str(last_edit["line"])]
+      file_name = "/".join(parts_file_name[4:]) + ":" + str(last_edit["line"]) + ":" + str(last_edit["column"]) + ":" + str(last_edit["view_id"])
+      file = [file_name]
       self.files.append(file)
 
     self.show_quick_panel(self.files, self.view.window())
@@ -30,8 +30,8 @@ class GotoLastEditCommand(sublime_plugin.TextCommand):
     if index == -1:
       return
 
-    file_name_with_args, line = self.files[index]
-    file_name, column, view_id = file_name_with_args.split(":")
+    file_name_with_args = self.files[index][0]
+    file_name, line, column, view_id = file_name_with_args.split(":")
     settings = sublime.load_settings("set_window_title.sublime-settings")
 
     for window in sublime.windows():
@@ -113,6 +113,11 @@ class CaptureFileEditing(sublime_plugin.EventListener):
     file_edit["view_id"] = view.id()
     file_edit["line"] = curr_line
     file_edit["column"] = curr_column
+
+    for i in range(len(goto_last_edit)):
+      if goto_last_edit[i]["file_name"] == file_name:
+        del goto_last_edit[i]
+        break
 
     goto_last_edit.insert(0, file_edit)
     goto_last_edit = goto_last_edit[:50]
