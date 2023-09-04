@@ -37,6 +37,12 @@ class SetTabsFileCommand(sublime_plugin.WindowCommand):
 
         # print('focus--focus---')
         sublime_api.window_focus_view(window.id(), view.id())
+        if 'find_text' in args:
+          # print('focusllllasldkfaçlskdjf')
+          # print(args['find_text'])
+          # view.find("import json", 0, sublime.IGNORECASE)
+          # view.run_command('insert', { 'characters': 'testing123' })
+          window.run_command("show_panel", {"panel": "find", "pattern": args['find_text'] })
         break;
   
   def get_official_title(self, view, project, settings):
